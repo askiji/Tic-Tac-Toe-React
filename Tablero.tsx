@@ -1,5 +1,8 @@
 import React = require('react');
 import Boton from './Boton';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './style.css';
 
 function Tablero() {
   const columna = [];
@@ -10,9 +13,9 @@ function Tablero() {
       aux++;
       casilla.push(<Boton indice={aux}></Boton>);
     }
-    columna.push(<div>{casilla}</div>);
+    columna.push(<div className="fila">{casilla}</div>);
   }
-  console.log(columna);
-  return <div>{columna}</div>;
+
+  return <>{columna}</>;
 }
 export default Tablero;
